@@ -30,6 +30,7 @@ XMLParser::XMLParser(bool useContentNodes) :
 {
 	// Init the XML parser
 	p_ = XML_ParserCreate(0);
+	// p_ = XML_parser_create(0);
 	XML_SetStartElementHandler(p_, startElementStaticHandler);
 	XML_SetEndElementHandler(p_, endElementStaticHandler);
 	XML_SetCharacterDataHandler(p_, characterDataStaticHandler);

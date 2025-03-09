@@ -815,7 +815,7 @@ static void dopr_outch(char *buffer, size_t *currlen, size_t maxlen, char c)
  * OS *either* has no definition of *sprintf, or if it does have one
  * that doesn't work properly according to the autoconf test.
  */
-#if !defined(HAVE_SNPRINTF)
+// #if !defined(HAVE_SNPRINTF)
 int smb_snprintf(char *str,size_t count,const char *fmt,...)
 {
 	size_t ret;
@@ -827,7 +827,7 @@ int smb_snprintf(char *str,size_t count,const char *fmt,...)
 	return (int) ret;
 }
 #define snprintf smb_snprintf
-#endif
+// #endif
 
 #endif 
 

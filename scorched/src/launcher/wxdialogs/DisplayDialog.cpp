@@ -449,15 +449,15 @@ void DisplayFrame::refreshScreen()
 	IDC_SLIDER1_CTRL->SetValue(OptionsDisplay::instance()->getBrightness());
 	IDC_SLIDER1_CTRL->SetToolTip(wxString(OptionsDisplay::instance()->getBrightnessEntry().getDescription(), wxConvUTF8));
 	IDC_VOLUME_CTRL->SetRange(0, 128);
-	IDC_VOLUME_CTRL->SetTickFreq(4, 0);
+	IDC_VOLUME_CTRL->SetTickFreq(4);
 	IDC_VOLUME_CTRL->SetValue(OptionsDisplay::instance()->getSoundVolume());
 	IDC_VOLUME_CTRL->SetToolTip(wxString(OptionsDisplay::instance()->getSoundVolumeEntry().getDescription(), wxConvUTF8));
 	IDC_MUSICVOLUME_CTRL->SetRange(0, 128);
-	IDC_MUSICVOLUME_CTRL->SetTickFreq(4, 0);
+	IDC_MUSICVOLUME_CTRL->SetTickFreq(4);
 	IDC_MUSICVOLUME_CTRL->SetValue(OptionsDisplay::instance()->getMusicVolume());
 	IDC_MUSICVOLUME_CTRL->SetToolTip(wxString(OptionsDisplay::instance()->getMusicVolumeEntry().getDescription(), wxConvUTF8));
 	IDC_AMBIENTVOLUME_CTRL->SetRange(0, 128);
-	IDC_AMBIENTVOLUME_CTRL->SetTickFreq(4, 0);
+	IDC_AMBIENTVOLUME_CTRL->SetTickFreq(4);
 	IDC_AMBIENTVOLUME_CTRL->SetValue(OptionsDisplay::instance()->getAmbientSoundVolume());
 	IDC_AMBIENTVOLUME_CTRL->SetToolTip(wxString(OptionsDisplay::instance()->getAmbientSoundVolumeEntry().getDescription(), wxConvUTF8));
 	IDC_USERNAME_CTRL->SetValue(wxString(OptionsDisplay::instance()->getOnlineUserName(), wxConvUTF8));

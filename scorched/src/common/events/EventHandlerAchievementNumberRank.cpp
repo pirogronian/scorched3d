@@ -75,6 +75,10 @@ void EventHandlerAchievementNumberRank::incrementCount(Tank *tank)
 {
 	RankInformation &info = playerRanks_[tank->getPlayerId()];
 	unsigned int currentCount = ++info.currentNumber;
+	if (info.nextRank == 0) {
+		fputs("nextRank == 0!\n", stderr);
+		return;
+	}
 	unsigned int neededCount = availableRanks_[info.nextRank-1];
 
 	if (currentCount >= neededCount)

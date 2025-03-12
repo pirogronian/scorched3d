@@ -59,15 +59,15 @@ public:
 
 	bool parse(const char *lpCmdLine);
 	bool parse(int argc,char *argv[]);
-	void addEntry(char *cmd, char **destStr, char *help = "");
-	void addEntry(char *cmd, int *destI, char *help = "");
-	void addEntry(char *cmd, bool *destB, char *help = "");
+	void addEntry(char *cmd, char **destStr, const char *help = "");
+	void addEntry(char *cmd, int *destI, const char *help = "");
+	void addEntry(char *cmd, bool *destB, const char *help = "");
 
-	void addEntry(char *cmd, ARGParserBoolI *destBool, char *help = "");
-	void addEntry(char *cmd, ARGParserIntI *destInt, char *help = "");
-	void addEntry(char *cmd, ARGParserStringI *destString, char *help = "");
+	void addEntry(char *cmd, ARGParserBoolI *destBool, const char *help = "");
+	void addEntry(char *cmd, ARGParserIntI *destInt, const char *help = "");
+	void addEntry(char *cmd, ARGParserStringI *destString, const char *help = "");
 
-	void addNonParamEntry(char *cmd, ARGParserStringI *destString, char *help = "");
+	void addNonParamEntry(char *cmd, ARGParserStringI *destString, const char *help = "");
 
 	void showArgs(const char *topString = NULL);
 
@@ -80,7 +80,7 @@ protected:
 			  char **destCArg = 0,
 			  int *destIArg = 0,
 			  bool *destBArg = 0,
-			  char *helpArg = "");
+			  const char *helpArg = "");
 
 		ARGParserBoolI *destBool;
 		ARGParserIntI *destInt;

@@ -13,6 +13,7 @@
 
 #define loslib_c
 #define LUA_LIB
+#define LUA_USE_MKSTEMP
 
 #include "lua.h"
 

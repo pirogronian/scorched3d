@@ -30,6 +30,7 @@
 #include <tankai/TankAIStore.h>
 #include <weapons/AccessoryStore.h>
 #include <server/ScorchedServer.h>
+#include <events/EventController.h>
 #include <set>
 #ifndef S3D_SERVER
 #include <tankgraph/TargetRendererImplTank.h>
@@ -136,6 +137,8 @@ bool ComsLoadLevelMessage::loadTanks(ScorchedContext &context)
 			}
 #endif
 			context.getTargetContainer().addTarget(tank);
+			/* Fix null tank achievement "NumberKills" after load save (experimental) */
+			context.getEventController().tankConnected(tank);
 		}
 
 		if (!tank->readMessage(reader)) return false;

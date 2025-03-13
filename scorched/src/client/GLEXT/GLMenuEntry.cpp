@@ -33,7 +33,7 @@ static const float menuItemHeight = 20.0f;
 
 GLMenuEntry::GLMenuEntry(
 	const LangString &menuName,
-	char *menuNameInternal, 
+	const char *menuNameInternal,
 	const LangString &menuDescription,
 	float width, 
 	unsigned int state,

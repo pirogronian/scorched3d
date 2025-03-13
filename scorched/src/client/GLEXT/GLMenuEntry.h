@@ -31,7 +31,7 @@ class GLMenuEntry : public GLWSelectorI, public ToolTipI
 public:
 	GLMenuEntry(
 		const LangString &menuName,
-		char *menuNameInternal, 
+		const char *menuNameInternal,
 		const LangString &menuDescription,
 		float width, 
 		unsigned int state,

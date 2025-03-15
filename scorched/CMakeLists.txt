@@ -8,6 +8,7 @@ find_package(SDL REQUIRED)
 find_package(wxWidgets REQUIRED)
 find_package(Freetype REQUIRED)
 find_package(expat REQUIRED)
+#find_package(MySQL REQUIRED)
 
 pkg_check_modules(FFTW3 REQUIRED fftw3)
 pkg_check_modules(FFTW3F REQUIRED fftw3f)
@@ -20,6 +21,7 @@ pkg_check_modules(GLEW REQUIRED glew)
 pkg_check_modules(GL REQUIRED gl)
 pkg_check_modules(PNG REQUIRED libpng)
 pkg_check_modules(JPEG REQUIRED libjpeg)
+# pkg_check_modules(MYSQL REQUIRED MySQL)
 
 add_compile_definitions(HAVE_VASPRINTF HAVE_SNPRINTF HAVE_VSNPRINTF)
 
@@ -85,5 +87,28 @@ target_link_libraries(scorchedc
     freetype
     expat
     alut
+    z
+)
+
+#   Server
+
+add_executable(scorcheds)
+
+add_subdirectory(src/server/scorcheds/)
+
+target_include_directories(scorcheds PUBLIC
+    src/common/porting
+    src/common
+    src/server
+)
+
+target_compile_definitions(scorcheds PUBLIC S3D_SERVER=1)
+
+target_link_libraries(scorcheds
+    SDL
+    SDL_net
+    expat
+    ${JPEG_LIBRARIES}
+    ${PNG_LIBRARIES}
     z
 )

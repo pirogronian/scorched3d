@@ -24,6 +24,23 @@ pkg_check_modules(JPEG REQUIRED libjpeg)
 # pkg_check_modules(MYSQL REQUIRED MySQL)
 
 add_compile_definitions(HAVE_VASPRINTF HAVE_SNPRINTF HAVE_VSNPRINTF)
+if (NOT DEFINED DATADIR)
+    add_compile_definitions(S3D_DATADIR="/usr/share/scorched3d")
+else()
+    add_compile_definitions(S3D_DATADIR="${DATADIR}")
+endif()
+
+if (NOT DEFINED DOCDIR)
+    add_compile_definitions(S3D_DOCDIR="/usr/share/scorched3d/documentation")
+else()
+    add_compile_definitions(S3D_DOCDIR="${DOCDIR}")
+endif()
+
+if (NOT DEFINED BINDIR)
+    add_compile_definitions(S3D_BINDIR="/usr/bin")
+else()
+    add_compile_definitions(S3D_BINDIR="${DOCDIR}")
+endif()
 
 #   Launcher
 
